@@ -13,4 +13,13 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::get('/maze', function () {
+    return view('maze');
+})->name('maze');
+
+Route::get('/cell/form', function () {
+    return view('maze');
+})->name('cell');
+
