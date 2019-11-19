@@ -1,6 +1,9 @@
 {
     "": "api\/user",
     "welcome": "\/",
-    "maze": "maze",
-    "cell": "cell\/form"
+    "first": "first\/path\/method\/get",
+    "second": "second\/path\/method\/post",
+    "third": "third\/path\/{param?}\/get\/method",
+    "fourth": "fourth\/path\/{param?}\/post\/method",
+    "fifth": "fifth\/form\/{parameter?}"
 }

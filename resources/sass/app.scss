@@ -1,1 +1,15 @@
 //
+/* $color: #000; */
+
+//$color: dodgerblue;
+
+$color: limegreen;
+
+.test-sass {
+  font-size: 55px;
+  margin:0;
+  padding:0;
+  color: $color;
+  text-transform: lowercase;
+}
+

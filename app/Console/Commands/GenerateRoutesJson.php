@@ -19,7 +19,6 @@ class GenerateRoutesJson extends Command
     // Router contains the collection of this apps routes
     protected $router;
 
-
     /**
      * The console command description.
      *
