@@ -157,14 +157,21 @@ var routes = __webpack_require__(/*! ./routes.json */ "./resources/js/routes.jso
     console.log('Error ( there is not such a route )');
   } else {
     return '/' + routes[param].split('/').map(function (str) {
-      if (str[0] === '{') {
-        return args.shift();
-      } else {
-        return str;
-      }
+      return str[0] === "{" ? args.shift() : str;
     }).join('/');
   }
 });
+/*
+return '/' + routes[param]
+.split('/')
+.map( function(str) {
+    if(str[0] === '{') {
+        return args.shift();
+    } else {
+        return str;
+    }
+}).join('/');
+*/
 
 /***/ }),
 

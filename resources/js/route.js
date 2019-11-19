@@ -16,29 +16,25 @@ export default function () {
         console.log('Error ( there is not such a route )');
 
     } else {
-
-        return '/' + routes[param]
-
+        return '/'
+            + routes[param]
             .split('/')
-
-            .map( function(str) {
-
-                if(str[0] === '{') {
-
-                    return args.shift();
-
-                } else {
-
-                    return str;
-
-                }
-
-            }).join('/');
-
+            .map( str => str[0] === "{" ? args.shift() : str )
+            .join('/');
     }
 
 }
-
+/*
+return '/' + routes[param]
+.split('/')
+.map( function(str) {
+    if(str[0] === '{') {
+        return args.shift();
+    } else {
+        return str;
+    }
+}).join('/');
+*/
 
 
 
