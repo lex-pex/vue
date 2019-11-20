@@ -12,6 +12,7 @@ return [
      * ],
      */
     'messages' => [
+        'testing',
         'validation',
         'pagination',
         'auth'
@@ -24,4 +25,13 @@ return [
 ];
 
 
+
+
 /* ____ ! ! !  from /vendor/mariuzzo/laravel-js-localization/src/config/config.php */
+
+
+
+
+
+
+
