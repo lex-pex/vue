@@ -1890,13 +1890,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3166,9 +3159,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "title m-b-md" }, [
-      _vm._v("\n        Laravel\n    ")
-    ]),
+    _c("div", { staticClass: "title m-b-md" }, [_vm._v(" Laravel ")]),
     _vm._v(" "),
     _vm._m(0)
   ])
