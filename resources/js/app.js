@@ -3,17 +3,16 @@
 // require('./bootstrap');
 
 /* * * * * * Route Passing Mechanism * * * * * * */
-
 /**
  * Parsing and Substantiation Object for paths
  * Object returns the path with the parameters by name
  * Arguments are the route "name" and its "parameter"
- * /
+ *   /
 import route from './route.js'; // import some module into script
 
 /**
  * Json Object of all routes (completed after "php artisan route:json")
- * /
+ *   /
 var routes = require('./routes.json'); // import the file content
 
 // Check the Exception to be throwing on "fake" route name
@@ -39,39 +38,64 @@ Object {
 }
 */
 
-/* * * * * * Front-End Scripts Localization * * * * * * */
+/* * * * * * * Front-End Scripts Localization * * * * * * */
+/**
+ *  The Laravel-JS-Localization extension with Land.js module usage
+ *   /
+import Lang from './lang';
+console.log(Lang);
+console.log(Lang.get('auth.failed'));
+console.log(Lang.get('testing.greeting'));
+console.log(Lang.get('testing.warning'));
+console.log(Lang.get('testing.wildcard', { name: 'Joe' }));
+console.log(Lang.get('testing.email', { email: 'address@mail.com' }));
+console.log(Lang.get('testing.email')); // missed wildcard will have return :wildcard
+console.log(Lang.setLocale('es')); // change the current location
+console.log(Lang.get('testing.greeting')); // still reachable key
+console.log(Lang.has('testing.foo')); // check if key exists
+console.log(Lang.choice('testing.plural', 1, { name: 'Report' })); // plural transition
+console.log(Lang.choice('testing.plural', 10)); // plural transition
+*/
 
+/* * * * * * * VueJS Framework usage * * * * * * */
+
+import route from './route.js'; // import some module into script
 import Lang from './lang';
 
-console.log(Lang);
+window.Vue = require('vue');
 
-console.log(Lang.get('auth.failed'));
+// Router Library
+import VueRouter from 'vue-router';
 
-console.log(Lang.get('testing.greeting'));
+// Own Router
+import router from './router';
 
-console.log(Lang.get('testing.warning'));
+// Root Component App
+import App from './components/App';
 
-console.log(Lang.get('testing.wildcard', { name: 'Joe' }));
 
-console.log(Lang.get('testing.email', { email: 'address@mail.com' }));
+// Examples from Laravel 5.*
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-console.log(Lang.get('testing.email')); // missed wildcard will have return :wildcard
+Vue.use(VueRouter);
 
-console.log(Lang.setLocale('es')); // change the current location
-
-console.log(Lang.get('testing.greeting')); // still reachable key
-
-console.log(Lang.has('testing.foo')); // check if key exists
-
-console.log(Lang.choice('testing.plural', 1, { name: 'Report' })); // plural transition
-
-console.log(Lang.choice('testing.plural', 10)); // plural transition
-
+const app = new Vue({
+    el: '#app',
+    render: h => h(App),
+    router
+});
 
 
 
 
-
+/*
+let app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello, Message!'
+                }
+            });
+*/
 
 
 

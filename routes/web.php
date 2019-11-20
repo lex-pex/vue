@@ -9,6 +9,8 @@
 
 Route::get('/', function () { return view('welcome'); })->name('welcome');
 
+Route::get('/home', function () { return view('welcome'); })->name('home');
+
 Route::get('/first/path/method/get', function () { /* to do */ })->name('first');
 
 Route::post('/second/path/method/post', function () { /* to do */ })->name('second');

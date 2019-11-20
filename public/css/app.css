@@ -8,3 +8,11 @@
   text-transform: lowercase;
 }
 
+.test-vue-sass {
+  text-align: left;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  color: gray;
+}
+
