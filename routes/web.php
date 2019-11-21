@@ -9,6 +9,8 @@
 
 Route::get('/', function () { return view('welcome'); })->name('welcome');
 // The VueJS scaffolding
+Route::get('/localization', function () { return view('welcome'); })->name('localization');
+// The VueJS scaffolding
 Route::get('/vue_js', function () { return view('vue.page'); })->name('vue_js');
 
 Route::get('/first/path/method/get', function () { /* to do */ })->name('first');

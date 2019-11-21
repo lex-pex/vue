@@ -41,21 +41,24 @@ Object {
 /* * * * * * * Front-End Scripts Localization * * * * * * */
 /**
  *  The Laravel-JS-Localization extension with Land.js module usage
- *   /
+ */
 import Lang from './lang';
-console.log(Lang);
-console.log(Lang.get('auth.failed'));
-console.log(Lang.get('testing.greeting'));
-console.log(Lang.get('testing.warning'));
-console.log(Lang.get('testing.wildcard', { name: 'Joe' }));
-console.log(Lang.get('testing.email', { email: 'address@mail.com' }));
-console.log(Lang.get('testing.email')); // missed wildcard will have return :wildcard
-console.log(Lang.setLocale('es')); // change the current location
-console.log(Lang.get('testing.greeting')); // still reachable key
-console.log(Lang.has('testing.foo')); // check if key exists
-console.log(Lang.choice('testing.plural', 1, { name: 'Report' })); // plural transition
-console.log(Lang.choice('testing.plural', 10)); // plural transition
-*/
+
+if (window.location.href.split('/').pop() === 'localization') {
+    console.log(Lang);
+    console.log(Lang.get('auth.failed'));
+    console.log(Lang.get('testing.greeting'));
+    console.log(Lang.get('testing.warning'));
+    console.log(Lang.get('testing.wildcard', {name: 'Joe'}));
+    console.log(Lang.get('testing.email', {email: 'address@mail.com'}));
+    console.log(Lang.get('testing.email')); // missed wildcard will have return :wildcard
+    console.log(Lang.setLocale('es')); // change the current location
+    console.log(Lang.get('testing.greeting')); // still reachable key
+    console.log(Lang.has('testing.foo')); // check if key exists
+    console.log(Lang.choice('testing.plural', 1, {name: 'Report'})); // plural transition
+    console.log(Lang.choice('testing.plural', 10)); // plural transition
+}
+
 
 /* * * * * * * VueJS Framework usage * * * * * * */
 
@@ -79,14 +82,14 @@ import Users from './components/Users.vue';
 // Apply the Router Library
 Vue.use(VueRouter);
 
-// Logic Launcher
-const app = new Vue({
-    el: '#app',
-    render: widget => widget( Users ),
-    UsersRouter
-});
-
-
+if (window.location.href.split('/').pop() === 'vue_js') {
+    // Logic Launcher
+    let app = new Vue({
+        el: '#app',
+        render: widget => widget( Users ),
+        UsersRouter
+    });
+}
 
 
 

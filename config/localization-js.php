@@ -24,11 +24,10 @@ return [
     'path' => public_path('messages.js'),
 ];
 
-
-
-
-/* ____ ! ! !  from /vendor/mariuzzo/laravel-js-localization/src/config/config.php */
-
+/* ! Code from source: /vendor/mariuzzo/laravel-js-localization/src/config/config.php
+   Loading by tutorial has failed:
+   php artisan vendor:publish --provider="Mariuzzo\LaravelJsLocalization\LaravelJsLocalizationServiceProvider"
+*/
 
 
 

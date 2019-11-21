@@ -24,7 +24,7 @@ class GenerateRoutesJson extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Generate json of all routes { name : path } /resources/js/routes.json';
 
     /**
      * Create a new command instance.
