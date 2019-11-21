@@ -8,7 +8,7 @@
     "users.update": "api\/users\/{user}",
     "users.destroy": "api\/users\/{user}",
     "welcome": "\/",
-    "home": "home",
+    "vue_js": "vue_js",
     "first": "first\/path\/method\/get",
     "second": "second\/path\/method\/post",
     "third": "third\/path\/{param?}\/get\/method",

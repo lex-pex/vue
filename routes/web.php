@@ -8,8 +8,8 @@
 */
 
 Route::get('/', function () { return view('welcome'); })->name('welcome');
-
-Route::get('/home', function () { return view('welcome'); })->name('home');
+// The VueJS scaffolding
+Route::get('/vue_js', function () { return view('vue.page'); })->name('vue_js');
 
 Route::get('/first/path/method/get', function () { /* to do */ })->name('first');
 

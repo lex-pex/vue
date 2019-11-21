@@ -1,29 +1,27 @@
 
-var routes = require('./routes.json');
+let routes = require('./routes.json');
 
 export default function () {
 
     // Avoid the changing in the mutable object (deep copy)
-    var args = Array.prototype.slice.call(arguments);
+    let args = Array.prototype.slice.call(arguments);
 
     // Get the first argument witch is the "route name"
-    var param = args.shift();
+    let param_name = args.shift();
 
     // Throw an Exception to log on absent name, otherwise
     // Parse and substantiate params accordingly by "name"
-    if(routes[param] === undefined) {
-
+    if(routes[param_name] === undefined) {
         console.log('Error ( there is not such a route )');
-
     } else {
         return '/'
-            + routes[param]
+            + routes[param_name]
             .split('/')
             .map( str => str[0] === "{" ? args.shift() : str )
             .join('/');
     }
-
 }
+
 /*
 return '/' + routes[param]
 .split('/')

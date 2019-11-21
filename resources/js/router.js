@@ -1,11 +1,12 @@
-import VueRouter from 'vue-router';
-import Users from './components/Users';
 
+
+import VueRouter from 'vue-router';
+import Users from './components/Users.vue';
 
 export default new VueRouter({
     routes: [
         {
-            path: '/home',
+            path: '/vue_js',
             component: Users
         }
     ],

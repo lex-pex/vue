@@ -59,8 +59,8 @@ console.log(Lang.choice('testing.plural', 10)); // plural transition
 
 /* * * * * * * VueJS Framework usage * * * * * * */
 
-import route from './route.js'; // import some module into script
-import Lang from './lang';
+// import route from './route.js';
+// import Lang from './lang';
 
 window.Vue = require('vue');
 
@@ -71,8 +71,7 @@ import VueRouter from 'vue-router';
 import router from './router';
 
 // Root Component App
-import App from './components/App';
-
+import App from './components/App.vue';
 
 // Examples from Laravel 5.*
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
@@ -84,22 +83,6 @@ const app = new Vue({
     render: h => h(App),
     router
 });
-
-
-
-
-/*
-let app = new Vue({
-                el: '#app',
-                data: {
-                    message: 'Hello, Message!'
-                }
-            });
-*/
-
-
-
-
 
 
 
