@@ -1,16 +1,20 @@
 <template>
 
-    <div class="content">
+    <div class="content container">
 
-        <div class="test-vue-sass">
-            <ul>
-                <li v-for="user in users">{{ user.name + ': ' + user.email }}</li>
-            </ul>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="lex-list">
+                    <ul>
+                        <li v-for="user in users">{{ user.name + ': ' + user.email }}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="title m-b-md"> VueJS : Users </div>
 
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref">
             <div class="links">
                 <a href="https://laravel.com/docs">Docs</a>
                 <a href="https://laracasts.com">Laracasts</a>
@@ -47,8 +51,7 @@
 
         methods : {
             getUsers() {
-//                axios.get(route('users.index'))
-                axios.get('api/users')
+                axios.get(route('users.index'))
                 .then((response) => {
                     this.users = response.data.users
                 });

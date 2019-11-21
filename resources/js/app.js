@@ -59,6 +59,9 @@ console.log(Lang.choice('testing.plural', 10)); // plural transition
 
 /* * * * * * * VueJS Framework usage * * * * * * */
 
+// Examples from Laravel 5.*
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
 // import route from './route.js';
 // import Lang from './lang';
 
@@ -67,32 +70,21 @@ window.Vue = require('vue');
 // Router Library
 import VueRouter from 'vue-router';
 
-// Own Router
-import router from './router';
+// Concrete VueRouter Instance (Own Router)
+import UsersRouter from './UsersRouter';
 
-// Root Component App
-import App from './components/App.vue';
+// App Root Component ( Widget ) for this Route
+import Users from './components/Users.vue';
 
-// Examples from Laravel 5.*
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
+// Apply the Router Library
 Vue.use(VueRouter);
 
+// Logic Launcher
 const app = new Vue({
     el: '#app',
-    render: h => h(App),
-    router
+    render: widget => widget( Users ),
+    UsersRouter
 });
-
-
-
-
-
-
-
-
-
-
 
 
 
