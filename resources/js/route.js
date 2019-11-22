@@ -1,3 +1,8 @@
+/**
+ * The Route parser module, finds the route by given name
+ * Takes as arguments the "route name" and list of parameters
+ * Replaces the parameter token with the actual parameter
+ */
 
 let routes = require('./routes.json');
 

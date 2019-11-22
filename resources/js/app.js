@@ -1,42 +1,44 @@
 
-
 // require('./bootstrap');
+
 
 /* * * * * * Route Passing Mechanism * * * * * * */
 /**
  * Parsing and Substantiation Object for paths
  * Object returns the path with the parameters by name
  * Arguments are the route "name" and its "parameter"
- *   /
+ */
 import route from './route.js'; // import some module into script
 
-/**
- * Json Object of all routes (completed after "php artisan route:json")
- *   /
-var routes = require('./routes.json'); // import the file content
+if (window.location.href.split('/').pop() === 'front_routing') {
+    /**
+     * Json Object of all routes (completed after "php artisan route:json")
+     */
+    var routes = require('./routes.json'); // import the file content
 
-// Check the Exception to be throwing on "fake" route name
-console.log(route('fake', ['PARAM_FAKE']));
+    // Check the Exception to be throwing on "fake" route name
+    console.log(route('fake', ['PARAM_FAKE']));
 
-// Check GET with parameter
-console.log(route('third', ['PARAM_GET']));
+    // Check GET with parameter
+    console.log(route('third', ['PARAM_GET']));
 
-// Check POST with parameter
-console.log(route('fourth', ['PARAM_POST']));
+    // Check POST with parameter
+    console.log(route('fourth', ['PARAM_POST']));
 
-// Show the Json Object-list of all
-console.log(routes);
-/*
-Object {
-    "": "api/user",
-    welcome: "/",
-    first: "first/path/method/get",
-    second: "second/path/method/post",
-    third: "third/path/{param?}/get/method",
-    fourth: "fourth/path/{param?}/post/method",
-    fifth: "fifth/form/{parameter?}"
+    // Show the Json Object-list of all
+    console.log(routes);
+    /*
+    Object {
+        "": "api/user",
+        welcome: "/",
+        first: "first/path/method/get",
+        second: "second/path/method/post",
+        third: "third/path/{param?}/get/method",
+        fourth: "fourth/path/{param?}/post/method",
+        fifth: "fifth/form/{parameter?}"
+    }
+    */
 }
-*/
 
 /* * * * * * * Front-End Scripts Localization * * * * * * */
 /**
@@ -65,12 +67,9 @@ if (window.location.href.split('/').pop() === 'localization') {
 // Examples from Laravel 5.*
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-// import route from './route.js';
-// import Lang from './lang';
-
 window.Vue = require('vue');
 
-// Router Library
+// Router Library "VueRouter"
 import VueRouter from 'vue-router';
 
 // Concrete VueRouter Instance (Own Router)
@@ -83,18 +82,15 @@ import Users from './components/Users.vue';
 Vue.use(VueRouter);
 
 if (window.location.href.split('/').pop() === 'vue_js') {
-    // Logic Launcher
+
+    // Vue Logic Launcher
     let app = new Vue({
         el: '#app',
         render: widget => widget( Users ),
         UsersRouter
     });
+
 }
-
-
-
-
-
 
 
 

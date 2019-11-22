@@ -8,6 +8,8 @@
 */
 
 Route::get('/', function () { return view('welcome'); })->name('welcome');
+// The Back-End to Front-end routing
+Route::get('/front_routing', function () { return view('welcome'); })->name('front_routing');
 // The VueJS scaffolding
 Route::get('/localization', function () { return view('welcome'); })->name('localization');
 // The VueJS scaffolding

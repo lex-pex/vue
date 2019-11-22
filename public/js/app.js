@@ -1874,6 +1874,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1883,7 +1884,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   computed: {
-    cUsers: function cUsers() {
+    collectionUsers: function collectionUsers() {
       return this.users;
     }
   },
@@ -3119,7 +3120,9 @@ var render = function() {
             }),
             0
           )
-        ])
+        ]),
+        _vm._v(" "),
+        _c("p", [_vm._v(_vm._s(_vm.users))])
       ])
     ]),
     _vm._v(" "),
@@ -18208,10 +18211,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _lang__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lang */ "./resources/js/lang.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _UsersRouter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UsersRouter */ "./resources/js/UsersRouter.js");
-/* harmony import */ var _components_Users_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Users.vue */ "./resources/js/components/Users.vue");
+/* harmony import */ var _route_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./route.js */ "./resources/js/route.js");
+/* harmony import */ var _lang__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lang */ "./resources/js/lang.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _UsersRouter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./UsersRouter */ "./resources/js/UsersRouter.js");
+/* harmony import */ var _components_Users_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Users.vue */ "./resources/js/components/Users.vue");
 // require('./bootstrap');
 
 /* * * * * * Route Passing Mechanism * * * * * * */
@@ -18220,37 +18224,36 @@ __webpack_require__.r(__webpack_exports__);
  * Parsing and Substantiation Object for paths
  * Object returns the path with the parameters by name
  * Arguments are the route "name" and its "parameter"
- *   /
-import route from './route.js'; // import some module into script
+ */
+ // import some module into script
 
-/**
- * Json Object of all routes (completed after "php artisan route:json")
- *   /
-var routes = require('./routes.json'); // import the file content
+if (window.location.href.split('/').pop() === 'front_routing') {
+  /**
+   * Json Object of all routes (completed after "php artisan route:json")
+   */
+  var routes = __webpack_require__(/*! ./routes.json */ "./resources/js/routes.json"); // import the file content
+  // Check the Exception to be throwing on "fake" route name
 
-// Check the Exception to be throwing on "fake" route name
-console.log(route('fake', ['PARAM_FAKE']));
 
-// Check GET with parameter
-console.log(route('third', ['PARAM_GET']));
+  console.log(Object(_route_js__WEBPACK_IMPORTED_MODULE_0__["default"])('fake', ['PARAM_FAKE'])); // Check GET with parameter
 
-// Check POST with parameter
-console.log(route('fourth', ['PARAM_POST']));
+  console.log(Object(_route_js__WEBPACK_IMPORTED_MODULE_0__["default"])('third', ['PARAM_GET'])); // Check POST with parameter
 
-// Show the Json Object-list of all
-console.log(routes);
-/*
-Object {
-    "": "api/user",
-    welcome: "/",
-    first: "first/path/method/get",
-    second: "second/path/method/post",
-    third: "third/path/{param?}/get/method",
-    fourth: "fourth/path/{param?}/post/method",
-    fifth: "fifth/form/{parameter?}"
+  console.log(Object(_route_js__WEBPACK_IMPORTED_MODULE_0__["default"])('fourth', ['PARAM_POST'])); // Show the Json Object-list of all
+
+  console.log(routes);
+  /*
+  Object {
+      "": "api/user",
+      welcome: "/",
+      first: "first/path/method/get",
+      second: "second/path/method/post",
+      third: "third/path/{param?}/get/method",
+      fourth: "fourth/path/{param?}/post/method",
+      fifth: "fifth/form/{parameter?}"
+  }
+  */
 }
-*/
-
 /* * * * * * * Front-End Scripts Localization * * * * * * */
 
 /**
@@ -18258,39 +18261,39 @@ Object {
  */
 
 
+
+
 if (window.location.href.split('/').pop() === 'localization') {
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"]);
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].get('auth.failed'));
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].get('testing.greeting'));
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].get('testing.warning'));
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].get('testing.wildcard', {
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].get('auth.failed'));
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].get('testing.greeting'));
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].get('testing.warning'));
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].get('testing.wildcard', {
     name: 'Joe'
   }));
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].get('testing.email', {
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].get('testing.email', {
     email: 'address@mail.com'
   }));
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].get('testing.email')); // missed wildcard will have return :wildcard
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].get('testing.email')); // missed wildcard will have return :wildcard
 
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].setLocale('es')); // change the current location
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].setLocale('es')); // change the current location
 
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].get('testing.greeting')); // still reachable key
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].get('testing.greeting')); // still reachable key
 
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].has('testing.foo')); // check if key exists
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].has('testing.foo')); // check if key exists
 
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].choice('testing.plural', 1, {
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].choice('testing.plural', 1, {
     name: 'Report'
   })); // plural transition
 
-  console.log(_lang__WEBPACK_IMPORTED_MODULE_0__["default"].choice('testing.plural', 10)); // plural transition
+  console.log(_lang__WEBPACK_IMPORTED_MODULE_1__["default"].choice('testing.plural', 10)); // plural transition
 }
 /* * * * * * * VueJS Framework usage * * * * * * */
 // Examples from Laravel 5.*
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-// import route from './route.js';
-// import Lang from './lang';
 
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // Router Library
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // Router Library "VueRouter"
 
  // Concrete VueRouter Instance (Own Router)
 
@@ -18298,16 +18301,16 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
  // Apply the Router Library
 
-Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
 
 if (window.location.href.split('/').pop() === 'vue_js') {
-  // Logic Launcher
+  // Vue Logic Launcher
   var app = new Vue({
     el: '#app',
     render: function render(widget) {
-      return widget(_components_Users_vue__WEBPACK_IMPORTED_MODULE_3__["default"]);
+      return widget(_components_Users_vue__WEBPACK_IMPORTED_MODULE_4__["default"]);
     },
-    UsersRouter: _UsersRouter__WEBPACK_IMPORTED_MODULE_2__["default"]
+    UsersRouter: _UsersRouter__WEBPACK_IMPORTED_MODULE_3__["default"]
   });
 }
 
@@ -18560,6 +18563,11 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/**
+ * The Route parser module, finds the route by given name
+ * Takes as arguments the "route name" and list of parameters
+ * Replaces the parameter token with the actual parameter
+ */
 var routes = __webpack_require__(/*! ./routes.json */ "./resources/js/routes.json");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
@@ -18595,10 +18603,10 @@ return '/' + routes[param]
 /*!**********************************!*\
   !*** ./resources/js/routes.json ***!
   \**********************************/
-/*! exports provided: , users.index, users.create, users.store, users.show, users.edit, users.update, users.destroy, welcome, localization, vue_js, first, second, third, fourth, fifth, default */
+/*! exports provided: , users.index, users.create, users.store, users.show, users.edit, users.update, users.destroy, welcome, front_routing, localization, vue_js, first, second, third, fourth, fifth, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"\":\"api/user\",\"users.index\":\"api/users\",\"users.create\":\"api/users/create\",\"users.store\":\"api/users\",\"users.show\":\"api/users/{user}\",\"users.edit\":\"api/users/{user}/edit\",\"users.update\":\"api/users/{user}\",\"users.destroy\":\"api/users/{user}\",\"welcome\":\"/\",\"localization\":\"localization\",\"vue_js\":\"vue_js\",\"first\":\"first/path/method/get\",\"second\":\"second/path/method/post\",\"third\":\"third/path/{param?}/get/method\",\"fourth\":\"fourth/path/{param?}/post/method\",\"fifth\":\"fifth/form/{parameter?}\"}");
+module.exports = JSON.parse("{\"\":\"api/user\",\"users.index\":\"api/users\",\"users.create\":\"api/users/create\",\"users.store\":\"api/users\",\"users.show\":\"api/users/{user}\",\"users.edit\":\"api/users/{user}/edit\",\"users.update\":\"api/users/{user}\",\"users.destroy\":\"api/users/{user}\",\"welcome\":\"/\",\"front_routing\":\"front_routing\",\"localization\":\"localization\",\"vue_js\":\"vue_js\",\"first\":\"first/path/method/get\",\"second\":\"second/path/method/post\",\"third\":\"third/path/{param?}/get/method\",\"fourth\":\"fourth/path/{param?}/post/method\",\"fifth\":\"fifth/form/{parameter?}\"}");
 
 /***/ }),
 

@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('auth:api')->resource('users', 'UserController');
 
+// When authentication and its need for this route
 // Route::middleware('auth:api')->resource('users', 'UserController');
 
 Route::resource('users', 'UserController');

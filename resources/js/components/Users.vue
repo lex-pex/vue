@@ -9,6 +9,7 @@
                         <li v-for="user in users">{{ user.name + ': ' + user.email }}</li>
                     </ul>
                 </div>
+                <p>{{ users }}</p>
             </div>
         </div>
 
@@ -32,19 +33,21 @@
 </template>
 
 <script>
+
     import axios from 'axios';
+
     import route from '../route';
 
     export default {
 
-        data() {
+        data () {
            return {
                users : []
            };
         },
 
         computed : {
-            cUsers : function() {
+            collectionUsers : function() {
                 return this.users;
             }
         },
@@ -63,7 +66,9 @@
             this.getUsers()
             // console.log('Component mounted.')
         }
+
     }
+
 </script>
 
 
