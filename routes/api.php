@@ -24,6 +24,25 @@ Route::middleware('auth:api')->resource('users', 'UserController');
 // When authentication and its need for this route
 // Route::middleware('auth:api')->resource('users', 'UserController');
 
-Route::resource('users', 'UserController');
+//Route::resource('users', 'UserController');
+
+// List Articles
+Route::get('articles', 'ArticleController@index');
+
+// List Single Article
+Route::get('article/{id}', 'ArticleController@show');
+
+// Create New Article
+Route::post('article', 'ArticleController@store');
+
+// Update Article
+Route::put('article', 'ArticleController@store');
+
+// Delete Article
+Route::delete('article/{id}', 'ArticleController@destroy');
+
+
+
+
 
 
