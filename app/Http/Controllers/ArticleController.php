@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use Illuminate\Http\Request;
 use App\Http\Resources\Article as ArticleResource;
+use Illuminate\Support\Facades\Response;
 
 class ArticleController extends Controller
 {
@@ -16,7 +17,7 @@ class ArticleController extends Controller
     public function index()
     {
         // Get Articles
-        $articles = Article::paginate(15);
+        $articles = Article::orderBy('created_at', 'desc')->paginate(5);
 
         // Return collection of Articles as a Resource
         return ArticleResource::collection($articles);
@@ -41,24 +42,25 @@ class ArticleController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \App\Http\Resources\Article
+     * @return     "\App\Http\Resources\Article"
      */
     public function store(Request $request)
     {
-        $article = $request->isMethod('put') ?
-            Article::findOrFail($request->article_id) :
-            new Article();
+        $article = null;
+
+        if($request->isMethod('post'))
+            $article = new Article();
+
+        if($request->isMethod('put'))
+            $article = Article::findOrFail($request->input('article_id'));
 
         $article->id = $request->input('article_id');
         $article->title = $request->input('title');
         $article->body = $request->input('body');
 
-        if($article->save()) {
-
+        if($article->save()){
             return new ArticleResource($article);
-
         }
-
     }
 
     /**

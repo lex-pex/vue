@@ -1,5 +1,10 @@
 
-// require('./bootstrap');
+
+// Bootstrap Module
+require('./bootstrap');
+
+// jQuery Module
+let $ = require("jquery");
 
 
 /* * * * * * Route Passing Mechanism * * * * * * */
@@ -64,13 +69,10 @@ if (window.location.href.split('/').pop() === 'localization') {
 
 /* * * * * * * VueJS Framework usage * * * * * * */
 
-// Examples from Laravel 5.* (without any Router)
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
 window.Vue = require('vue');
 
 // Router Library "VueRouter"
-import VueRouter from 'vue-router';
+import VueRouter from 'vue-router';   // ! ! ! check it up ! ! !
 
 // Concrete VueRouter Instance (Own Router)
 import RouterUsers from './RouterUsers';
@@ -79,16 +81,18 @@ import RouterUsers from './RouterUsers';
 import Users from './components/Users.vue';
 
 // Apply the Router Library
-Vue.use(VueRouter);
+Vue.use(VueRouter);          // ! ! ! check it up ! ! !
 
-// Uri control
-if (window.location.href.split('/').pop() === 'vue') {
+// Uri Switch Control to VueJS Scaffolds
+if (window.location.href.split('/').pop().replace(/#/, "") === 'vue') {
 
     // Vue Logic Launcher
     let app = new Vue({
         el: '#app',
         render: widget => widget( Users ),
-        RouterUsers
+
+        RouterUsers // ! ! ! check it up ! ! !
+
     });
 }
 
@@ -100,18 +104,37 @@ import RouterArticles from './RouterArticles';
 // App Root Component ( Widget ) for this Route
 import Articles from './components/Articles.vue';
 
-// Uri control
-if (window.location.href.split('/').pop() === 'spa') {
+// App Additional Component ( Widget ) for this Route
+import Navbar from './components/Navbar.vue';
+
+// Uri Switch Control to SPA Articles
+if (window.location.href.split('/').pop().replace(/#/, "") === 'spa') {
 
     let app = new Vue({
+
         el: '#app',
-        render: widget => widget( Articles ),
-        RouterArticles
+
+        render(h) {
+            // Add the props you want to these two components
+            const dna = h( Navbar );
+            const other = h( Articles );
+            // return a container with both of them as children
+            return h("div", [dna, other])
+        },
+
+        RouterArticles // ! ! ! check it up ! ! !
+
     });
 
 }
 
 
+
+
+/* * * * * * * * * simple example * * * * * * * * */
+// Examples from Laravel 5.* (without any Router)
+// window.Vue = require('vue');
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 
 
