@@ -1,5 +1,5 @@
 {
-    "": "api\/user",
+    "": "api\/article\/{id}",
     "users.index": "api\/users",
     "users.create": "api\/users\/create",
     "users.store": "api\/users",
@@ -10,10 +10,11 @@
     "welcome": "\/",
     "front_routing": "front_routing",
     "localization": "localization",
-    "vue_js": "vue_js",
     "first": "first\/path\/method\/get",
     "second": "second\/path\/method\/post",
     "third": "third\/path\/{param?}\/get\/method",
     "fourth": "fourth\/path\/{param?}\/post\/method",
-    "fifth": "fifth\/form\/{parameter?}"
+    "fifth": "fifth\/form\/{parameter?}",
+    "vue": "vue",
+    "spa": "spa"
 }

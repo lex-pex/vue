@@ -14,7 +14,7 @@ if (window.location.href.split('/').pop() === 'front_routing') {
     /**
      * Json Object of all routes (completed after "php artisan route:json")
      */
-    var routes = require('./routes.json'); // import the file content
+    let routes = require('./routes.json'); // import the file content
 
     // Check the Exception to be throwing on "fake" route name
     console.log(route('fake', ['PARAM_FAKE']));
@@ -64,7 +64,7 @@ if (window.location.href.split('/').pop() === 'localization') {
 
 /* * * * * * * VueJS Framework usage * * * * * * */
 
-// Examples from Laravel 5.*
+// Examples from Laravel 5.* (without any Router)
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 window.Vue = require('vue');
@@ -73,7 +73,7 @@ window.Vue = require('vue');
 import VueRouter from 'vue-router';
 
 // Concrete VueRouter Instance (Own Router)
-import UsersRouter from './UsersRouter';
+import RouterUsers from './RouterUsers';
 
 // App Root Component ( Widget ) for this Route
 import Users from './components/Users.vue';
@@ -81,16 +81,40 @@ import Users from './components/Users.vue';
 // Apply the Router Library
 Vue.use(VueRouter);
 
-if (window.location.href.split('/').pop() === 'vue_js') {
+// Uri control
+if (window.location.href.split('/').pop() === 'vue') {
 
     // Vue Logic Launcher
     let app = new Vue({
         el: '#app',
         render: widget => widget( Users ),
-        UsersRouter
+        RouterUsers
+    });
+}
+
+/* * * * * * * SPA "Articles" upon VueJs * * * * * * */
+
+// Concrete VueRouter Instance (Own Router)
+import RouterArticles from './RouterArticles';
+
+// App Root Component ( Widget ) for this Route
+import Articles from './components/Articles.vue';
+
+// Uri control
+if (window.location.href.split('/').pop() === 'spa') {
+
+    let app = new Vue({
+        el: '#app',
+        render: widget => widget( Articles ),
+        RouterArticles
     });
 
 }
+
+
+
+
+
 
 
 

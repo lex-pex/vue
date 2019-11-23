@@ -12,8 +12,6 @@ Route::get('/', function () { return view('welcome'); })->name('welcome');
 Route::get('/front_routing', function () { return view('welcome'); })->name('front_routing');
 // The VueJS scaffolding
 Route::get('/localization', function () { return view('welcome'); })->name('localization');
-// The VueJS scaffolding
-Route::get('/vue_js', function () { return view('vue.page'); })->name('vue_js');
 
 Route::get('/first/path/method/get', function () { /* to do */ })->name('first');
 
@@ -25,7 +23,11 @@ Route::post('/fourth/path/{param?}/post/method', function () { /* to do */ })->n
 
 Route::post('/fifth/form/{parameter?}', function () { /* to do */ })->name('fifth');
 
+// The VueJS scaffolding
+Route::get('/vue', function () { return view('vue.page'); })->name('vue');
 
+// Articles the VueJS SPA
+Route::get('/spa', function () { return view('articles.spa'); })->name('spa');
 
 
 

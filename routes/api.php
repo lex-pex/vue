@@ -19,12 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('auth:api')->resource('users', 'UserController');
-
 // When authentication and its need for this route
 // Route::middleware('auth:api')->resource('users', 'UserController');
 
-//Route::resource('users', 'UserController');
+Route::resource('users', 'UserController');
 
 // List Articles
 Route::get('articles', 'ArticleController@index');
