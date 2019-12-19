@@ -1,5 +1,5 @@
 {
-    "": "api\/article\/{id}",
+    "": "api\/user",
     "users.index": "api\/users",
     "users.create": "api\/users\/create",
     "users.store": "api\/users",
@@ -7,6 +7,10 @@
     "users.edit": "api\/users\/{user}\/edit",
     "users.update": "api\/users\/{user}",
     "users.destroy": "api\/users\/{user}",
+    "articles.index": "api\/articles",
+    "articles.create": "api\/articles\/create",
+    "articles.store": "api\/articles",
+    "articles.show": "api\/articles\/{article}",
     "welcome": "\/",
     "front_routing": "front_routing",
     "localization": "localization",

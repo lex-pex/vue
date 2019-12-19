@@ -24,6 +24,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('users', 'UserController');
 
+/*Route::resource('articles', 'ArticleController')->only([
+    'index', 'show', 'create', 'store'
+]);*/
+
+
 // List Articles
 Route::get('articles', 'ArticleController@index');
 

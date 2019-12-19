@@ -18,6 +18,7 @@ export default function () {
     // Parse and substantiate params accordingly by "name"
     if(routes[param_name] === undefined) {
         console.log('Error ( there is not such a route )');
+        return false;
     } else {
         return '/'
             + routes[param_name]
@@ -28,15 +29,16 @@ export default function () {
 }
 
 /*
-return '/' + routes[param]
-.split('/')
-.map( function(str) {
-    if(str[0] === '{') {
-        return args.shift();
-    } else {
-        return str;
-    }
-}).join('/');
+return '/' +
+    routes[param_name]
+    .split('/')
+    .map( function(str) {
+        if(str[0] === '{') {
+            return args.shift();
+        } else {
+            return str;
+        }
+    }).join('/');
 */
 
 

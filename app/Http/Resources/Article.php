@@ -14,8 +14,7 @@ class Article extends JsonResource
      */
     public function toArray($request)
     {
-        //return parent::toArray($request);
-
+        // return parent::toArray($request);
         // Without "timestamps"
         return [
             'id' => $this->id,
@@ -24,10 +23,10 @@ class Article extends JsonResource
         ];
     }
 
+    // This needs to be added manually
     public function with($request)
     {
         // return parent::with($request); // TO_DO: Change the auto-generated stub
-
         // Add Json sting of some additional info
         return [
             'version' => '1.0.0',

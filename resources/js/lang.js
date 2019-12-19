@@ -6,16 +6,24 @@ import lang from 'lang.js';
 import props from './properties';
 
 const Lang = new lang({
+
     messages: props,
-    locale: 'en',
-    fallback: 'en'
+
+    // not necessary parameters
+
+    locale: 'en',  // the current localization
+    fallback: 'en' // the default for fail cases
+
 });
 
 export default Lang;
 
 /*
+ *
  * On changes localization/property files of Laravel there is
  * a need to rewrite properties file use the console command
- * ___ " php artisan lang:js resources/js/properties.js --no-lib " ___
+ *
+ *  __ " php artisan lang:js resources/js/properties.js --no-lib " __
+ *
  */
 

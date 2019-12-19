@@ -7,7 +7,7 @@ import Users from './components/Users.vue';
 export default new VueRouter({
     routes: [
         {
-            path: '/vue_js',
+            path: '/vue',
             component: Users
         }
     ],

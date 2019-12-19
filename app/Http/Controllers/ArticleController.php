@@ -27,7 +27,7 @@ class ArticleController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * @return ArticleResource
      */
     public function show($id)
     {
@@ -54,7 +54,6 @@ class ArticleController extends Controller
         if($request->isMethod('put'))
             $article = Article::findOrFail($request->input('article_id'));
 
-        $article->id = $request->input('article_id');
         $article->title = $request->input('title');
         $article->body = $request->input('body');
 

@@ -54,17 +54,20 @@
 
         methods : {
             getUsers() {
-                axios.get(route('users.index'))
-                .then((response) => {
-                    this.users = response.data.users
-                });
+
+                axios
+                    .get(route('users.index'))
+                    .then((response) => {
+                        this.users = response.data.users
+                    });
+
                 console.log(this.users);
             }
         },
 
         mounted() {
             this.getUsers()
-            // console.log('Component mounted.')
+             console.log('Component mounted.')
         }
 
     }
