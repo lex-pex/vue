@@ -99,6 +99,14 @@ export default {
                     vm.makePagination(response.meta, response.links)
                 })
                 .catch(err => console.log(err));
+            /*
+            axios.get(page_url)
+                .then(response => {
+                    this.articles = response.data.data;
+                    vm.makePagination(response.data.meta, response.data.links);
+                })
+                .catch(err => console.log(err));
+            */
         },
 
         makePagination(meta, links) {
@@ -189,13 +197,11 @@ export default {
         },
 
         editArticle(article) {
-
             this.edit = true;
             this.article.id = article.id;
             this.article.article_id = article.id;
             this.article.title = article.title;
             this.article.body = article.body;
-
         }
 
     }

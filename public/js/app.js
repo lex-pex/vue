@@ -1931,6 +1931,14 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (err) {
         return console.log(err);
       });
+      /*
+      axios.get(page_url)
+          .then(response => {
+              this.articles = response.data.data;
+              vm.makePagination(response.data.meta, response.data.links);
+          })
+          .catch(err => console.log(err));
+      */
     },
     makePagination: function makePagination(meta, links) {
       this.pagination = {

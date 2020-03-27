@@ -16,22 +16,21 @@
     <body>
 
     <div id="app">
-
         <navbar></navbar>
-
         <!-- THIS IS NEVER SHOWS UP -->
         <div> WHATEVER IT IS </div>
 
         <articles></articles>
-
     </div>
 
     <hr/>
+
     <footer class="page-footer font-small bg-info text-light">
         <div class="footer-copyright text-center py-3">
             © <script>document.write(new Date().getFullYear())</script> Copyright : SPA VueJS Articles
         </div>
     </footer>
+
     </body>
 </html>
 
